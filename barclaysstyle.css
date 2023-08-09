@@ -1,0 +1,287 @@
+@import url('https://fonts.googleapis.com/css2?family=Josefin+Sans:wght@500&display=swap');
+
+
+* {
+    font-family: 'Josefin Sans', sans-serif;
+}
+
+:root {
+    --anchorColor: rgb(66, 109, 123);
+    --hoverColor: rgb(179, 214, 232);
+    --buttonBack: rgb(24, 64, 133);
+    --gridRadius: 15%;
+    --asideBorder: solid black 2px;
+    --asideBackground: #f0eded;
+
+}
+
+/* HEADER Style*/
+
+header {
+    text-align: center;
+    border-bottom: 2px solid #CCC;
+}
+
+.listHeader a {
+    text-decoration: none;
+    color: var(--anchorColor);
+    padding: 5px;
+}
+
+.listHeader a:hover {
+    background-color: var(--hoverColor);
+}
+
+/* #logoHeader {
+    width: 400px;
+    height: 100px;
+} */
+
+/* Buttons */
+
+.button {
+    background-color: var(--buttonBack);
+    color: white !important;
+    border-radius: 20px;
+    padding: 15px;
+    text-decoration: none;
+}
+
+
+/* NAVBAR Style */
+
+
+nav {
+    /* padding: 10px; */
+    margin: 5px;
+    font-size: 20px;
+    position: sticky;
+    top: 0px;
+    box-shadow: 10px 5px 5px #CCC;
+    background-color: white;
+    z-index: 100;
+
+}
+
+nav ul {
+    list-style-type: none;
+    text-align: center;
+    display: flex;
+    justify-content: space-around;
+}
+
+.listNav a {
+    color: var(--anchorColor);
+    text-decoration: none;
+    padding: 10px;
+    display: block;
+}
+
+ul .listNav {
+    display: inline-block;
+}
+
+.listNav a:hover {
+    background-color: var(--hoverColor);
+}
+
+.subMenuNav {
+    display: none;
+    width: 200px;
+    position: absolute;
+}
+
+.subMenuNav a {
+    display: block;
+    background-color: white;
+    text-align: left;
+}
+
+.listNav:hover .subMenuNav {
+    display: block;
+}
+
+/* MAIN Style */
+
+.section1 {
+    background-image: url(./shake_campaign_yellow_3_1.medium.medium_quality.jpg);
+    background-repeat: no-repeat;
+    background-size: 100% 100%;
+    overflow: hidden;
+    padding-top: 70px;
+    padding-left: 50px;
+
+}
+
+
+.aside1 {
+    background-color: var(--asideBackground);
+    border: var(--asideBorder);
+    text-align: center;
+
+}
+
+.mortpic {
+    margin: 0px 0px 0px 0px;
+    width: 300px;
+    height: 200px;
+}
+
+
+.aside2 {
+    background-color: var(--asideBackground);
+    border: var(--asideBorder);
+    text-align: center;
+}
+
+.womanimg {
+    margin: 0px 0px 0px 0px;
+    width: 300px;
+    height: 200px;
+}
+
+article {
+    background-color: var(--asideBackground);
+    border: var(--asideBorder);
+    text-align: center;
+}
+
+#websitelink {
+    text-decoration: none;
+}
+
+.video {
+    width: 100%;
+    height: 100%;
+
+}
+
+
+#video {
+    border: double 2px;
+}
+
+/* Footer */
+
+#footerlist {
+    list-style-type: none;
+}
+
+.clickHere {
+    background-color: #CCC;
+    height: 30px;
+    transition: background-color 10s, width 1s, height 5s, font-size 5s;
+    text-decoration: none;
+    border: solid 1px;
+}
+
+.clickHere:hover {
+    background-color: var(--anchorColor);
+    width: 200px;
+    height: 100px;
+    font-size: 40px;
+}
+
+footer h2 {
+    padding-left: 35px;
+    box-shadow: 10px 5px 5px #CCC;
+}
+
+.footerimg1 {
+    margin-left: 100px;
+}
+
+.footerimg2 {
+    margin-left: 100px;
+}
+
+#footerlist {
+    display: inline-block;
+}
+
+
+/* Grid Container */
+
+.container {
+    display: grid;
+    height: 100vh;
+    row-gap: 5px;
+    column-gap: 5px;
+    grid-template-columns: 1fr 1fr 1fr 1fr;
+    grid-template-rows: 150px 100px 600px 400px 400px 100px;
+    grid-gap: 2rem;
+    grid-template-areas:
+        'header header header header'
+        'nav nav nav nav'
+        'section1 section1 section1 section1'
+        'aside1 aside1 aside2 aside2'
+        'article article video video'
+        'footer footer footer footer';
+}
+
+header {
+    grid-area: header;
+}
+
+nav {
+    grid-area: nav;
+}
+
+.section1 {
+    grid-area: section1;
+    border: 1px solid;
+}
+
+.aside1 {
+    grid-area: aside1;
+}
+
+.aside2 {
+    grid-area: aside2;
+}
+
+article {
+    grid-area: article;
+}
+
+.video {
+    grid-area: video;
+}
+
+footer {
+    grid-area: footer;
+}
+
+/* Media Queries */
+
+@media (max-width:600px) and (min-width:300px) {
+    .container {
+        background-color: var(--hoverColor);
+        font-size: 10px;
+
+    }
+
+    #logoHeader {
+        width: 100px;
+        height: 50px;
+
+    }
+
+    nav {
+        display: none;
+    }
+
+    .aside1 .mortpic {
+        display: none;
+
+    }
+
+    .aside2 .womanimg {
+        display: none;
+    }
+
+    footer .footerimg1 {
+        display: none;
+    }
+
+}
